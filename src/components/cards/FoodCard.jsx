@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CardButton from "../buttons/CardButton";
 
 const FoodCard = ({ food }) => {
 	const { title, foodImg, price, category, id } = food;
@@ -30,9 +31,7 @@ const FoodCard = ({ food }) => {
 
 				{/* Buttons */}
 				<div className="grid grid-cols-2 gap-3 pt-4">
-					<button className="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 transition">
-						Add to Cart
-					</button>
+					<CardButton food={food} />
 
 					<Link
 						href={`/foods/${id}`}
