@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
 							Foods
 						</Link>
 						<Link href="/reviews">Reviews</Link>
+						<Link href="/feedbacks">Feedbacks</Link>
 					</div>
 				</header>
 				<main className="px-5 py-8">
