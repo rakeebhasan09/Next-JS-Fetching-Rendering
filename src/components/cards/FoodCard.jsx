@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CardButton from "../buttons/CardButton";
+import Image from "next/image";
 
 const FoodCard = ({ food }) => {
 	const { title, foodImg, price, category, id } = food;
@@ -8,7 +9,14 @@ const FoodCard = ({ food }) => {
 		<div className="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition">
 			{/* Image */}
 			<div className="overflow-hidden rounded-t-2xl">
-				<img
+				{/* <img
+					src={foodImg}
+					alt={title}
+					className="h-48 w-full object-cover hover:scale-105 transition duration-300"
+				/> */}
+				<Image
+					width={300}
+					height={150}
 					src={foodImg}
 					alt={title}
 					className="h-48 w-full object-cover hover:scale-105 transition duration-300"
