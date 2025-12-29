@@ -1,5 +1,3 @@
-"use client";
-
 const FeedbackCard = ({ feedback }) => {
 	const { message, date } = feedback;
 
