@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
 	const { id } = await params;
@@ -30,14 +31,15 @@ const page = async ({ params }) => {
 	const { id } = await params;
 	const food = await getSingleFood(id);
 
-	if (!food) {
-		return (
-			<div className="flex min-h-[60vh] items-center justify-center">
-				<h2 className="text-xl font-semibold text-gray-600">
-					Food not found
-				</h2>
-			</div>
-		);
+	if (!food.title) {
+		redirect("/foods");
+		// return (
+		// 	<div className="flex min-h-[60vh] items-center justify-center">
+		// 		<h2 className="text-xl font-semibold text-gray-600">
+		// 			Food not found
+		// 		</h2>
+		// 	</div>
+		// );
 	}
 
 	const { title, foodImg, price, category, area, video } = food;
